@@ -48,7 +48,7 @@ The data model uses a Star Schema connecting central weekly sales transaction re
 - dim_weather: Environmental condition lookup mapping temperature, rainfall, and holiday indicators by region and week.
 - Selected Metric: Disconnected dynamic parameter table supporting user-driven field switching across visual charts.
 
-## Core DAX Measures & Formulas
+## Core DAX Measures and Formulas
 "Total Units Sold"="SUM" ("fact_sales" ["Units_Sold" ])
 "Total Revenue"="SUMX" ("fact_sales" ,"fact_sales" ["Units_Sold" ]×"fact_sales" ["Price" ])
 "Total Wastage Cost"="SUMX" ("fact_sales" ,"fact_sales" ["Wastage_Units" ]×"fact_sales" ["Price" ])
@@ -92,20 +92,15 @@ Evaluates supplier performance, lead times, cold storage constraints, and top sp
 - Holiday Spike Demand: Holiday weeks generate £47M in expected revenue across just 10 holiday weeks, demonstrating intense demand concentration during festive periods. 
 
 ### Supply Chain & Weather Impact
-- Cold Storage Bottlenecks: Stores with mid-tier cold storage capacities (1000–1999) suffered the highest waste volume at 2.2M units, indicating that capacity limitations directly drive spoilage during peak shipments.
+- Cold Storage Bottlenecks: Stores with mid-tier cold storage capacities (1000–1999) suffered the highest waste volume at 2.2M units, indicating that capacity limitations directly drive spoilage during storage.
 - Short Shelf-Life Vulnerability: Bakery products with 2 to 4-day shelf lives (e.g., White Sandwich Loaf, Donuts, Croissants) dominate the top waste lists, generating over £7.4M in combined wastage cost.
 - Weather Sensitivity: Sales peak significantly when weekly temperatures range between 1–19°C and moderate rainfall (10–19 mm) occurs, whereas extreme cold (-5 to 0°C) reduces expected revenue to £9M.
 
 ## Strategic Recommendations
-Dynamic Weather-Based Replenishment: Integrate weekly weather forecasts into store ordering algorithms, reducing perishable orders by 15–20% during predicted extreme cold spells (-5 to 0°C).
-	Cold Storage Infrastructure Expansion: Upgrade refrigeration capacity in stores falling within the 1000–1999 capacity group to alleviate bottleneck-driven spoilage.
-	Bakery Vendor Lead-Time Optimization: Shift high-spoilage short shelf-life bakery items (2–4 day shelf life) to daily micro-deliveries rather than large batch shipments from suppliers like TrustedSource Provisions and LocalHarvest Distributors. 
-	Holiday Stock Allocation Safeguards: Establish buffer stock thresholds leading into key holiday weeks to capture maximum demand without over-allocating short shelf-life items.
-⚙️ Tech Stack
-	Data Transformation & Modeling: Microsoft Power BI Desktop, DAX, Star Schema Data Modeling 
-	Reporting & UI: Dynamic Slicers, Visual Field Parameters, Custom UI Navigation Buttons, Microsoft PowerPoint 
-👨‍💻 Author
-Emmanuel Sey Williams
-📧 williamsemmanuel7382@gmail.com
-📅 2026 | 📊 Project Status: Complete
+- Dynamic Weather-Based Replenishment: Integrate weekly weather forecasts into store ordering algorithms, reducing perishable orders by 15–20% during predicted extreme cold spells (-5 to 0°C).
+- Cold Storage Infrastructure Expansion: Upgrade refrigeration capacity in stores falling within the 1000–1999 capacity group to alleviate bottleneck-driven spoilage.
+- Bakery Vendor Lead-Time Optimization: Shift high-spoilage short shelf-life bakery items (2–4 day shelf life) to daily micro-deliveries rather than large batch shipments from suppliers like TrustedSource Provisions and LocalHarvest Distributors. 
+- Holiday Stock Allocation Safeguards: Establish buffer stock thresholds leading into key holiday weeks to capture maximum demand without over-allocating short shelf-life items.
 
+### Tech Stack
+- Data Visualization & Modeling: Microsoft PowerBI Desktop, DAX, Snowflake Data Modeling
