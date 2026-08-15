@@ -103,4 +103,4 @@ Evaluates supplier performance, lead times, cold storage constraints, and top sp
 - Holiday Stock Allocation Safeguards: Establish buffer stock thresholds leading into key holiday weeks to capture maximum demand without over-allocating short shelf-life items.
 
 ### Tech Stack
-- Data Visualization & Modeling: Microsoft PowerBI Desktop, DAX, Snowflake Data Modeling
+- Data Visualization & Modeling: Microsoft Power BI Desktop, DAX, Snowflake Data Modeling
