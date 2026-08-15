@@ -3,7 +3,7 @@ A comprehensive inventory optimization and revenue protection analytics solution
 
 ## Table of Contents
 - [Overview](#overview)
-- [Project Brief and Problem Statement](#Project-Brief-and -Problem-Statement)
+- [Project Brief and Problem Statement](#Project-Brief-and-Problem-Statement)
 - [Data Pipeline and Architecture](#Data-Pipeline-&-Architecture)
 - [Data Model & Relationships](#Data-Model-&-Relationships)
 - [Core DAX Measures & Formulas](#Core-DAX-Measures-&-Formulas)
