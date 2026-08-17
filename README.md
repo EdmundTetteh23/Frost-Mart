@@ -37,7 +37,7 @@ The project integrated five pre-structured CSV tables directly into PowerBI, foc
 - Custom Binning & Slicers: Applied calculated parameters and dynamic UI metric selectors (Selected Metric) for dynamic visual switching.
 	
 ## Data Model and Relationships
-The data model uses a Star Schema connecting central weekly sales transaction records to descriptive dimension tables:
+The data model uses a Sbowflake Schema connecting central weekly sales transaction records to descriptive dimension tables:
 
 <img width="1001" height="497" alt="FM Data Model" src="https://github.com/user-attachments/assets/9de56162-80e7-478d-9270-002c592bf003" />
 
