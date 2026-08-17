@@ -14,7 +14,7 @@ A comprehensive inventory optimization and revenue protection analytics solution
 - [Tech Stack](#Tech-Stack)
 - Author
   
-##Overview 
+## Overview 
 FrostMart UK is a national retail chain established in 1992, operating over 800 stores across the United Kingdom and specializing in affordable fresh produce, dairy, bakery, and seasonal goods. With seasonal perishable items driving nearly 35% of annual revenue, effective stock management is critical to protecting margins. 
 This project establishes an analytics framework by integrating transaction, supplier, store, and weather data directly into a Power BI star schema model without needing data cleaning, enabling leadership to track perishable waste drivers, evaluate cold storage limits, and optimize stock levels against weather patterns. 
 
@@ -37,7 +37,7 @@ The project integrated five pre-structured CSV tables directly into PowerBI, foc
 - Custom Binning & Slicers: Applied calculated parameters and dynamic UI metric selectors (Selected Metric) for dynamic visual switching.
 	
 ## Data Model and Relationships
-The data model uses a Sbowflake Schema connecting central weekly sales transaction records to descriptive dimension tables:
+The data model uses a Snowflake Schema connecting central weekly sales transaction records to descriptive dimension tables:
 
 <img width="1001" height="497" alt="FM Data Model" src="https://github.com/user-attachments/assets/9de56162-80e7-478d-9270-002c592bf003" />
 
@@ -49,11 +49,11 @@ The data model uses a Sbowflake Schema connecting central weekly sales transacti
 - Selected Metric: Disconnected dynamic parameter table supporting user-driven field switching across visual charts.
 
 ## Core DAX Measures and Formulas
-"Total Units Sold"="SUM" ("fact_sales" ["Units_Sold" ])
-"Total Revenue"="SUMX" ("fact_sales" ,"fact_sales" ["Units_Sold" ]×"fact_sales" ["Price" ])
-"Total Wastage Cost"="SUMX" ("fact_sales" ,"fact_sales" ["Wastage_Units" ]×"fact_sales" ["Price" ])
-"Expected Revenue"="Total Revenue"+"Total Wastage Cost" 
-"Wastage Rate (%)"=("Total Wastage Cost" /"Expected Revenue" )×100
+- Total Units Sold = SUM(fact_sales[Units_Sold])
+- Total Revenue = SUMX(fact_sales , fact_sales[Units_Sold]×  fact_sales[Price])
+- Total Wastage Cost = SUMX(fact_sales,f act_sales[Wastage_Units] × fact_sales[Price])
+- Expected Revenue = Total Revenue + Total Wastage Cost
+- Wastage Rate (%) = (Total Wastage Cost/Expected Revenue)
 
 ## Dashboards and Visualizations
 ### Dashboard 1 — Executive Summary
